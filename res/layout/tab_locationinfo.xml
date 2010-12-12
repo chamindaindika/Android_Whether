@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/LinearLayout01" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"  
+	android:orientation="vertical">
+	
+	<TextView 
+		android:id="@+id/TextView01" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Display Location">	
+	</TextView>	
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout02" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">
+
+		<TextView 
+			android:id="@+id/TextView02" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" android:text="Full :">
+		</TextView>
+		
+		<TextView 
+			android:text="@+id/TextView03" 
+			android:id="@+id/TextView03" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</TextView>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout03" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+		<TextView 
+			android:id="@+id/TextView04" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" android:text="City :">
+		</TextView>
+		
+		<TextView 
+			android:text="@+id/TextView05" 
+			android:id="@+id/TextView05" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</TextView>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout04" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:id="@+id/TextView06" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="State :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView07" 
+		android:id="@+id/TextView07" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	</TextView>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout05" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:id="@+id/TextView08" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="State Name :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView09" 
+		android:id="@+id/TextView09" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	</TextView>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout06" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:id="@+id/TextView10" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Country :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView11" 
+		android:id="@+id/TextView11" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	</TextView>
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout07" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:id="@+id/TextView12" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Country ISO:">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView13" 
+		android:id="@+id/TextView13" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	</TextView>
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout08" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:id="@+id/TextView14" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Zip :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView14" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView15">
+	</TextView>
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout09" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Latitude :" android:id="@+id/TextView16">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView15" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView17">
+	</TextView>
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout10" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Longitude :" android:id="@+id/TextView18">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView16" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView19">
+	</TextView>
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout11" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Elevation :" android:id="@+id/TextView20">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView21">
+	</TextView>
+	</LinearLayout>
+	
+<TextView android:id="@+id/TextView22" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<TextView android:id="@+id/TextView23" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Observation Location"></TextView>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout12" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView24" android:text="Full :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView25">
+	</TextView>
+	</LinearLayout>
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout13" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView26" android:text="City :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView27">
+	</TextView>
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout14" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView28" android:text="State :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView29">
+	</TextView>
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout15" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView30" android:text="Country :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView31">
+	</TextView>
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout16" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="Country ISO :" android:id="@+id/TextView32">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView33">
+	</TextView>
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout17" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView34" android:text="Latitude :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView35">
+	</TextView>
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/LinearLayout18" 
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" android:layout_height="wrap_content">	
+	
+	<TextView 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView36" android:text="Longitude :">
+	</TextView>
+	
+	<TextView 
+		android:text="@+id/TextView18" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:id="@+id/TextView37">
+	</TextView>
+	</LinearLayout>	
+	
+</LinearLayout>
