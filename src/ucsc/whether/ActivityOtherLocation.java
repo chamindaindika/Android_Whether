@@ -1,30 +1,43 @@
 package ucsc.whether;
 
-import java.util.regex.Pattern;
+import java.io.IOException;
+import java.util.Hashtable;
+
+import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 
-public class ActivityOtherLocation extends Activity {
-	public static final String URL = "http://api.wunderground.com/auto/wui/geo/WXCurrentObXML/index.xml";
+public class ActivityOtherLocation extends Activity {	
+	String city;
+	public static final String URL = "http://api.wunderground.com/auto/wui/geo/WXCurrentObXML/index.xml";	
 	EditText etcity;
+	ProgressDialog pd;
 	
+	@SuppressWarnings("static-access")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.other_location);
         
-        etcity = (EditText) this.findViewById(R.id.EditText01);  
-        
+        etcity = (EditText) this.findViewById(R.id.EditText01);
+        pd = new ProgressDialog(this);
+        pd.setProgressStyle(pd.STYLE_SPINNER);
+        pd.setMessage("Retriving from the Service...");        
 	}
 	
-	public void onButtonGetForecast(View v){
-    	String city = etcity.getText().toString();
+	public void onButtonGetForecast(View v){	
+		pd.show();
+    	city = etcity.getText().toString();
     	if(city.length()==0){
     		showDialog(0);
     	}else if(city.indexOf(" ")>0){
@@ -32,12 +45,48 @@ public class ActivityOtherLocation extends Activity {
     	//}else if(Pattern.matches("[0-9]", city)){
         	//showDialog(2);
         }else{
-    		String url = URL + "?query=" + city + ",LK";    	
-	    	Intent intent = new Intent(this, ActivityWhetherInformation.class);
-	    	intent.putExtra("address", url);
-	    	startActivity(intent);  
-    	}    	
-    }
+	    	callService cs = new callService();
+	    	cs.execute(null, null, null);
+        }    	
+    }	
+	
+	final Handler callServiceHandler = new Handler(){
+    	public void handleMessage(Message message){
+    		@SuppressWarnings("unchecked")
+			Hashtable<String, String> serviceResult = (Hashtable<String, String>) message.getData().getSerializable("serviceResult");    		 		
+    		Intent intent = new Intent(ActivityOtherLocation.this, ActivityWhetherInformation.class);
+	    	intent.putExtra("address", serviceResult);
+	    	startActivity(intent);
+	    	pd.dismiss();
+    	}
+    };
+	
+	class callService extends AsyncTask<Object, Object, Object>{
+		Hashtable<String, String> hashTable;
+		XmlParser xp;
+
+		@Override
+		protected Object doInBackground(Object... params) {
+			String url = URL + "?query=" + city + ",LK";
+				try{	    	        	
+		        	xp = new XmlParser();
+		            hashTable = xp.process(url,1);		            
+				}catch (IOException e){
+			    	//e.printStackTrace();	    	
+			    	showDialog(0);
+			    }catch (XmlPullParserException ex){
+			    	ex.printStackTrace();
+			    }    
+			    
+			    Message message = callServiceHandler.obtainMessage();
+			    Bundle bundle = new Bundle();
+			    bundle.putSerializable("serviceResult", hashTable);			   
+			    message.setData(bundle);
+			    callServiceHandler.sendMessage(message);
+	        
+			return null;
+		}    	
+    }	
 	
 	public AlertDialog onCreateDialog(int id){
     	AlertDialog ad;
@@ -56,8 +105,7 @@ public class ActivityOtherLocation extends Activity {
 		.setNegativeButton("OK", new DialogInterface.OnClickListener() {			
 			@Override
 			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();
-				
+				dialog.cancel();				
 			}
 		});		
 		ad = builder.create();			

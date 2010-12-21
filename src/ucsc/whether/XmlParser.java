@@ -3,8 +3,6 @@ package ucsc.whether;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 import org.kxml2.io.KXmlParser;
@@ -18,7 +16,7 @@ public class XmlParser {
 	public Hashtable<String, String> process(String url, int para) throws IOException, XmlPullParserException{
 		
 		ServiceRequest sr = new ServiceRequest();
-		BufferedReader br = sr.getConnect(url);				
+		BufferedReader br = sr.getConnect(url);	
 		
 		KXmlParser parse = new KXmlParser();	    
 		parse.setInput(br);	
@@ -228,37 +226,46 @@ public class XmlParser {
 			//ht.put("cityname", parse.nextText());^[^\\d].*
 			
 			String address = parse.nextText();
-			String arr[];
+			String arr[];			
 			
-			arr = address.split(",");	
+			arr = address.split(",");
+			String country = arr[arr.length-1].trim();			
 			
 			for(String item : arr){
+				//System.out.println(item);
 				if(Pattern.matches("[^\\d].*", item)){
-					System.out.println(item);					
-				}	
+					if(Pattern.matches("^.*\\D", item)){
+						if(item.indexOf("Rd")<0 && item.indexOf("Mw")<0 && item.trim().indexOf(" ")<0){
+							if(item!=arr[arr.length-1]){
+								//System.out.println(item);
+								ht.put("cityname", item.trim());
+								ht.put("countryName", country);
+							}
+						}						
+					}								
+				}
 			}
-		}			
-				
+		}else if(para==2){			
+			/*parse.nextTag();
+			//System.out.println(parse.getName() + parse.nextText());
+			String txt = parse.nextText();
+			
+			int x = txt.indexOf("<CountryCode>");
+			System.out.println(x);
+			int y = txt.indexOf("</CountryCode>");
+			System.out.println(y);
+			System.out.println(txt.substring(x+13, y));*/
+			
+			//=======================================================
+			parse.nextTag();
+			parse.nextTag();
+			parse.nextTag();
+			String countryCode = parse.nextText();
+			//System.out.println(parse.getName() + parse.nextText());
+			
+			ht.put("countryCode", countryCode);
+		}
 		return ht;
 	}
-	
-		
-	/*public String getCity(String add){
-		String aaa=null;
-		List<String> result  = new LinkedList<String>();
-		String address = add;
-		String arr[];
-		
-		arr = address.split(",");		
-		for(String item : arr){
-			if(!Pattern.matches("[A-Z]", item)){
-				System.out.println(item);
-				aaa = item;
-			}			
-		}
-		//String a[] = result.toArray(arr);
-		//System.out.println(result.size());
-		return aaa;
-	}*/
 	
 }

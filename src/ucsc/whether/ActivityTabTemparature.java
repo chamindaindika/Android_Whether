@@ -1,5 +1,6 @@
 package ucsc.whether;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 
 import android.app.Activity;
@@ -7,8 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 
-public class ActivityTabTemparature extends Activity {
-	Hashtable<String, String> ht;
+public class ActivityTabTemparature extends Activity {	
 	TextView tvTemparature_f;
     TextView tvTemparature_c;
     TextView tvhumidity;
@@ -18,7 +18,7 @@ public class ActivityTabTemparature extends Activity {
         setContentView(R.layout.tab_temparature);  
         
 		@SuppressWarnings("unchecked")
-		Hashtable<String, String> ht = (Hashtable<String, String>) getIntent().getSerializableExtra("hash");
+		HashMap<String, String> ht = (HashMap<String, String>) getIntent().getSerializableExtra("hash");
                 
         tvTemparature_c = (TextView) this.findViewById(R.id.TextView02);
         tvTemparature_f = (TextView) this.findViewById(R.id.TextView04);

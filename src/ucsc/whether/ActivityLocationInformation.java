@@ -1,5 +1,6 @@
 package ucsc.whether;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 
 import android.app.Activity;
@@ -7,8 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 
-public class ActivityLocationInformation extends Activity {
-	Hashtable<String, String> ht;
+public class ActivityLocationInformation extends Activity {	
 	TextView tvFull;
 	TextView tvCity;
 	TextView tvState;
@@ -25,7 +25,7 @@ public class ActivityLocationInformation extends Activity {
         setContentView(R.layout.tab_locationinfo);
         
         @SuppressWarnings("unchecked")
-		Hashtable<String, String> ht = (Hashtable<String, String>) getIntent().getSerializableExtra("hash");
+		HashMap<String, String> ht = (HashMap<String, String>) getIntent().getSerializableExtra("hash");
     
         tvFull = (TextView) this.findViewById(R.id.TextView03);
         tvCity = (TextView) this.findViewById(R.id.TextView05);
