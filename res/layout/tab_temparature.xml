@@ -10,11 +10,11 @@ android:id="@+id/TextView02"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:text="TextView"
-android:textSize="50sp"
+android:textSize="40sp"
 android:typeface="serif"
 android:textStyle="bold"
-android:layout_x="23px"
-android:layout_y="92px"
+android:layout_x="50px"
+android:layout_y="135px"
 >
 </TextView>
 <TextView
@@ -22,11 +22,11 @@ android:id="@+id/TextView04"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:text="TextView"
-android:textSize="50sp"
+android:textSize="40sp"
 android:typeface="serif"
 android:textStyle="bold"
-android:layout_x="30px"
-android:layout_y="141px"
+android:layout_x="160px"
+android:layout_y="135px"
 >
 </TextView>
 <TextView
@@ -34,11 +34,11 @@ android:id="@+id/TextView06"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:text="TextView"
-android:textSize="50sp"
+android:textSize="25sp"
 android:typeface="serif"
 android:textStyle="bold"
-android:layout_x="44px"
-android:layout_y="189px"
+android:layout_x="45px"
+android:layout_y="200px"
 >
 </TextView>
 
