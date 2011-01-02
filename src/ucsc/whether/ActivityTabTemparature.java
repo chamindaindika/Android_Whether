@@ -1,7 +1,6 @@
 package ucsc.whether;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,8 +22,8 @@ public class ActivityTabTemparature extends Activity {
         tvTemparature_c = (TextView) this.findViewById(R.id.TextView02);
         tvTemparature_f = (TextView) this.findViewById(R.id.TextView04);
         tvhumidity = (TextView) this.findViewById(R.id.TextView06);
-        tvTemparature_f.setText(ht.get("temp_f"));
-        tvTemparature_c.setText(ht.get("temp_c"));
+        tvTemparature_f.setText(ht.get("temp_f") + "ºF");
+        tvTemparature_c.setText(ht.get("temp_c") + "ºC");
         tvhumidity.setText(ht.get("relative_humidity"));
     }
 }

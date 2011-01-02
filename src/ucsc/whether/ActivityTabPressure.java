@@ -1,7 +1,7 @@
 package ucsc.whether;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -19,13 +19,22 @@ public class ActivityTabPressure extends Activity {
         
         @SuppressWarnings("unchecked")
 		HashMap<String, String> ht = (HashMap<String, String>) getIntent().getSerializableExtra("hash");
-    
-        tvPressure = (TextView) this.findViewById(R.id.TextView02);
-        tvPressuremb = (TextView) this.findViewById(R.id.TextView04);
-        tvPressurein = (TextView) this.findViewById(R.id.TextView06);
-        tvPressure.setText(ht.get("pressure_string"));
-        tvPressuremb.setText(ht.get("pressure_mb"));
-        tvPressurein.setText(ht.get("pressure_in"));
         
+        tvPressurein = (TextView) this.findViewById(R.id.TextView02);        
+        tvPressuremb = (TextView) this.findViewById(R.id.TextView04);
+        tvPressure = (TextView) this.findViewById(R.id.TextView06);
+                
+        tvPressuremb.setText(convertToDouble(ht.get("pressure_mb")).toString()+" mb");
+        tvPressurein.setText(convertToDouble(ht.get("pressure_in")).toString()+" inHg");
+        
+        Double incm = convertToDouble(ht.get("pressure_in"))*2.54;  
+        tvPressure.setText(convertToDouble(incm.toString()).toString()+ " cmHg");        
+        
+    }
+    
+    public Double convertToDouble(String val){   	
+    	Double dd = Double.valueOf(val);
+    	DecimalFormat df = new DecimalFormat("#.##");    	
+    	return Double.valueOf(df.format(dd));
     }
 }

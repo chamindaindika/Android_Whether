@@ -1,17 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/LinearLayout01" 
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent"  
-	android:orientation="vertical">
-
-<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wind Status" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wind Direction" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wind Degree" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView07" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wind Speed" android:textSize="25px"></TextView>
-<TextView android:id="@+id/TextView08" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25px"></TextView>
-
-</LinearLayout>
+<AbsoluteLayout
+android:id="@+id/widget0"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="@drawable/wind_back">
+<TextView
+android:id="@+id/TextView04"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="TextView"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="50px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView06"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="TextView"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="100px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView08"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="TextView"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="150px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView01"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Direction:"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="35px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView02"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Angle:"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="85px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView03"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Speed:"
+android:textStyle="bold"
+android:layout_x="30px"
+android:layout_y="135px"
+>
+</TextView>
+</AbsoluteLayout>

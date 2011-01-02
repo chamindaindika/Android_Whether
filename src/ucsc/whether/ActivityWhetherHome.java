@@ -63,7 +63,7 @@ public class ActivityWhetherHome extends ListActivity {
 	    	    		Criteria crit = new Criteria();
 	    	    		crit.setAccuracy(Criteria.ACCURACY_FINE);
 	    	    		String provider = lm.getBestProvider(crit, true);
-	    	    		Location loc = lm.getLastKnownLocation(provider);
+	    	    		//Location loc = lm.getLastKnownLocation(provider);
 						//Double lat = loc.getLatitude();  	
 						//Double lng = loc.getLongitude();  
 						//System.out.println(lat.toString());
@@ -74,6 +74,7 @@ public class ActivityWhetherHome extends ListActivity {
 	    				cs.setURL(url);
 	    				cs.execute(null,null,null);
     	    		}catch (NullPointerException npe){
+    	    			pd.dismiss();
     	    			showDialog(1);    	    			
     	    		}
     			}else if(selectedItem== "Other Location"){     				
@@ -112,23 +113,17 @@ public class ActivityWhetherHome extends ListActivity {
 	        	xp1 = new XmlParser();
 	            ht1 = xp1.process(geoCodingURL,0);    	                
 	            String cityname = ht1.get("cityname");  
-	            //String country = ht1.get("countryName");
-	            //country = country.replaceAll(" ", "%20");
-	            //countryCodeURL = "http://www.webservicex.net/country.asmx/GetISOCountryCodeByCountyName?CountryName="+country;	            
-	            //System.out.println("dada" + countryCodeURL);
-	            //ht3 = xp1.process(countryCodeURL, 2);
-	          //====================================================================================================================
-	            //countryCodeURL = "http://ws.geonames.org/countryCode?lat=6.888&lng=79.884";
-	            countryCodeURL = "http://ws.geonames.org/countryCode?lat=6.888&lng=79.884&style=full&type=XML";
-	            ht3 = xp1.process(countryCodeURL, 2);
-	          //====================================================================================================================	            
+	            
+	            countryCodeURL = "http://ws.geonames.org/countryCode?lat=6.858&lng=79.884&style=full&type=XML";
+	            ht3 = xp1.process(countryCodeURL, 2);	          	            
 	            String countryCode = ht3.get("countryCode");
+	            
 	        	String otherLocationURL = "http://api.wunderground.com/auto/wui/geo/WXCurrentObXML/index.xml?query="+cityname+","+countryCode;
 	        	System.out.println(otherLocationURL);
-	        	ht2 = xp1.process(otherLocationURL, 1);	        	
-		    }catch (IOException e){	    	
-		    	showDialog(0);
-		    	//e.printStackTrace();	    	
+	        	ht2 = xp1.process(otherLocationURL, 1);	    
+	        	
+		    }catch (IOException e){ 		    	
+		    	showDialog(0);		    	
 		    }catch (XmlPullParserException ex){
 		    	ex.printStackTrace();
 		    }
@@ -161,8 +156,8 @@ public class ActivityWhetherHome extends ListActivity {
 		.setCancelable(false)		
 		.setNegativeButton("OK", new DialogInterface.OnClickListener() {			
 			@Override
-			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();				
+			public void onClick(DialogInterface dialog, int id) {				
+				dialog.cancel();					
 			}
 		});		
 		ad = builder.create();			

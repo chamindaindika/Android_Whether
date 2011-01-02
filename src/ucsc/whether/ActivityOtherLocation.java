@@ -2,6 +2,7 @@ package ucsc.whether;
 
 import java.io.IOException;
 import java.util.Hashtable;
+import java.util.regex.Pattern;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -36,15 +37,16 @@ public class ActivityOtherLocation extends Activity {
 	}
 	
 	public void onButtonGetForecast(View v){	
-		pd.show();
+		
     	city = etcity.getText().toString();
     	if(city.length()==0){
-    		showDialog(0);
+    		showDialog(0);    		
     	}else if(city.indexOf(" ")>0){
-    		showDialog(1);
-    	//}else if(Pattern.matches("[0-9]", city)){
-        	//showDialog(2);
+    		showDialog(1);    		
+    	}else if(Pattern.matches("[\\d].*", city) || !Pattern.matches("^.*\\D", city)){    		
+    		showDialog(2);    
         }else{
+        	pd.show();
 	    	callService cs = new callService();
 	    	cs.execute(null, null, null);
         }    	
@@ -54,10 +56,15 @@ public class ActivityOtherLocation extends Activity {
     	public void handleMessage(Message message){
     		@SuppressWarnings("unchecked")
 			Hashtable<String, String> serviceResult = (Hashtable<String, String>) message.getData().getSerializable("serviceResult");    		 		
-    		Intent intent = new Intent(ActivityOtherLocation.this, ActivityWhetherInformation.class);
-	    	intent.putExtra("address", serviceResult);
-	    	startActivity(intent);
-	    	pd.dismiss();
+    		if(serviceResult.get("city").length()>2 & serviceResult.get("elevation").length()>3){
+	    		Intent intent = new Intent(ActivityOtherLocation.this, ActivityWhetherInformation.class);
+		    	intent.putExtra("address", serviceResult);
+		    	startActivity(intent);
+		    	pd.dismiss();
+    		}else{
+    			showDialog(3);  
+    			pd.dismiss();
+    		}
     	}
     };
 	
@@ -68,6 +75,7 @@ public class ActivityOtherLocation extends Activity {
 		@Override
 		protected Object doInBackground(Object... params) {
 			String url = URL + "?query=" + city + ",LK";
+			System.out.println(url);
 				try{	    	        	
 		        	xp = new XmlParser();
 		            hashTable = xp.process(url,1);		            
@@ -95,8 +103,10 @@ public class ActivityOtherLocation extends Activity {
     		msg="City name is required!";
     	}else if(id==1){
     		msg="City should be have only one word.";
-    	//}else if(id==2){
-    		//msg="Cityname should not be have numbers.";
+    	}else if(id==2){
+    		msg="Invalid city!";
+    	}else if(id==3){
+    		msg="Currently, the service is not avilable for this city!";
     	}
     	  		
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -105,6 +115,7 @@ public class ActivityOtherLocation extends Activity {
 		.setNegativeButton("OK", new DialogInterface.OnClickListener() {			
 			@Override
 			public void onClick(DialogInterface dialog, int id) {
+				etcity.setText("");
 				dialog.cancel();				
 			}
 		});		
