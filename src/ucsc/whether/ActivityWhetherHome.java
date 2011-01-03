@@ -64,6 +64,7 @@ public class ActivityWhetherHome extends ListActivity {
 	    	    		crit.setAccuracy(Criteria.ACCURACY_FINE);
 	    	    		String provider = lm.getBestProvider(crit, true);
 	    	    		Location loc = lm.getLastKnownLocation(provider);
+	    	    		//Location loc = lm.getCurrentLocation("gps");
 						Double lat = loc.getLatitude();  	
 						Double lng = loc.getLongitude();  
 						System.out.println(lat.toString());
