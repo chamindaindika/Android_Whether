@@ -39,7 +39,7 @@ public class ActivityWhetherHome extends ListActivity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+                
         setListAdapter(new ArrayAdapter<String>(this, R.layout.whether_home, listItems));
         
     	ListView lv = getListView();
@@ -63,13 +63,13 @@ public class ActivityWhetherHome extends ListActivity {
 	    	    		Criteria crit = new Criteria();
 	    	    		crit.setAccuracy(Criteria.ACCURACY_FINE);
 	    	    		String provider = lm.getBestProvider(crit, true);
-	    	    		//Location loc = lm.getLastKnownLocation(provider);
-						//Double lat = loc.getLatitude();  	
-						//Double lng = loc.getLongitude();  
-						//System.out.println(lat.toString());
-	    	    		//String url = "http://maps.googleapis.com/maps/api/geocode/xml?latlng="+lat.toString()+","+lng.toString()+"&sensor=true";     	    		
-	    	    		//System.out.println(url);	    	    		
-						String url = "http://maps.googleapis.com/maps/api/geocode/xml?latlng=6.858,79.884&sensor=true";
+	    	    		Location loc = lm.getLastKnownLocation(provider);
+						Double lat = loc.getLatitude();  	
+						Double lng = loc.getLongitude();  
+						System.out.println(lat.toString());
+	    	    		String url = "http://maps.googleapis.com/maps/api/geocode/xml?latlng="+lat.toString()+","+lng.toString()+"&sensor=true";     	    		
+	    	    		System.out.println(url);	    	    		
+						//String url = "http://maps.googleapis.com/maps/api/geocode/xml?latlng=6.858,79.884&sensor=true";
 	    				callService cs = new callService();
 	    				cs.setURL(url);
 	    				cs.execute(null,null,null);

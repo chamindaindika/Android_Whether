@@ -65,10 +65,5 @@ android:layout_x="30px"
 android:layout_y="135px"
 >
 </TextView>
-<ImageView 
-android:layout_height="wrap_content" 
-android:layout_width="wrap_content" 
-android:id="@+id/ImageView01" 
-android:layout_x="110px" 
-android:layout_y="35px" android:background="@drawable/icon" android:clickable="true"></ImageView>
+
 </AbsoluteLayout>

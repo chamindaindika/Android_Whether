@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout
-android:id="@+id/widget0"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:background="@drawable/pressure_back">
-<TextView
-android:id="@+id/TextView02"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="TV"
-android:textSize="35sp"
-android:typeface="serif"
-android:textStyle="bold"
-android:layout_x="75px"
-android:layout_y="20px" android:textColor="@color/background1">
-</TextView>
-<TextView
-android:id="@+id/TextView04"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="TV"
-android:textSize="20sp"
-android:typeface="serif"
-android:textStyle="bold"
-android:layout_x="170px"
-android:layout_y="85px"
-android:textColor="@color/background1">
-</TextView>
-<TextView
-android:id="@+id/TextView06"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="TV"
-android:textSize="20sp"
-android:layout_x="32px"
-android:layout_y="85px"
-android:textColor="@color/background1" android:textStyle="bold" android:typeface="serif">
-</TextView>
+	android:id="@+id/widget0"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/pressure_back">
+	<TextView
+		android:id="@+id/TextView02"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="TV"
+		android:textSize="35sp"
+		android:typeface="serif"
+		android:textStyle="bold"
+		android:layout_x="75px"
+		android:layout_y="20px" android:textColor="@color/background1">
+	</TextView>
+	<TextView
+		android:id="@+id/TextView04"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="TV"
+		android:textSize="20sp"
+		android:typeface="serif"
+		android:textStyle="bold"
+		android:layout_x="170px"
+		android:layout_y="85px"
+		android:textColor="@color/background1">
+	</TextView>
+	<TextView
+		android:id="@+id/TextView06"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="TV"
+		android:textSize="20sp"
+		android:layout_x="32px"
+		android:layout_y="85px"
+		android:textColor="@color/background1" android:textStyle="bold" android:typeface="serif">
+	</TextView>
 </AbsoluteLayout>

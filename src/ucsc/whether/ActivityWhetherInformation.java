@@ -21,10 +21,10 @@ public class ActivityWhetherInformation extends TabActivity {
 	/** Called when the activity is first created. */    
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.whether_information);                           
-        
-		@SuppressWarnings("unchecked")
+        super.onCreate(savedInstanceState);   
+        setContentView(R.layout.whether_information); 	        
+		
+        @SuppressWarnings("unchecked")
 		HashMap<String, String> hashMap = (HashMap<String, String>) getIntent().getSerializableExtra("address");    
         
         Resources res = getResources();

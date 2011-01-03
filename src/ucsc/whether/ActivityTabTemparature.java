@@ -22,8 +22,21 @@ public class ActivityTabTemparature extends Activity {
         tvTemparature_c = (TextView) this.findViewById(R.id.TextView02);
         tvTemparature_f = (TextView) this.findViewById(R.id.TextView04);
         tvhumidity = (TextView) this.findViewById(R.id.TextView06);
-        tvTemparature_f.setText(ht.get("temp_f") + "ºF");
-        tvTemparature_c.setText(ht.get("temp_c") + "ºC");
-        tvhumidity.setText(ht.get("relative_humidity")+" of Humidity");
+        
+        if(ht.get("temp_f").length()>0){
+	        tvTemparature_f.setText(ht.get("temp_f") + "ºF");
+        }else{
+        	tvTemparature_f.setText("N/A");
+        }
+	    if(ht.get("temp_c").length()>0){
+	        tvTemparature_c.setText(ht.get("temp_c") + "ºC");
+	    }else{
+	    	tvTemparature_c.setText("N/A");
+	    }
+	    if(ht.get("relative_humidity").length()>0){
+	        tvhumidity.setText(ht.get("relative_humidity")+" of Humidity");
+	    }else{
+	    	tvhumidity.setText("N/A");
+	    }
     }
 }

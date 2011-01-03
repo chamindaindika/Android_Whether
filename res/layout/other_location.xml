@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout 
-	android:id="@+id/LinearLayout01" 
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent" 
-	xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:background="@drawable/back">
-	
-	
-	
-<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Whether Forecast"></TextView>
-<TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-<TextView android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select your location:"></TextView>
-<EditText android:id="@+id/EditText01" android:layout_height="wrap_content" android:layout_width="fill_parent"></EditText>
-<Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onButtonGetForecast" android:text="Get Forecast!"></Button>
-<ImageButton android:id="@+id/ImageButton01" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageButton>
-</LinearLayout>
+<AbsoluteLayout
+android:id="@+id/AbsoluteLayout07"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+android:id="@+id/TextView02"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_x="-1px"
+android:layout_y="-1px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextView03"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Select your location:"
+android:textSize="20px"
+android:textStyle="bold"
+android:layout_x="8px"
+android:layout_y="17px">
+</TextView>
+<EditText
+android:id="@+id/EditText01"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_x="0px"
+android:layout_y="50px"
+>
+</EditText>
+<Button
+android:id="@+id/Button01"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Continue"
+android:textStyle="bold"
+android:layout_x="1px"
+android:layout_y="99px" android:onClick="onButtonGetForecast">
+</Button>
+<ImageView
+android:id="@+id/ImageView01"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_x="5px"
+android:layout_y="185px"
+android:background="@drawable/map">
+</ImageView>
+</AbsoluteLayout>

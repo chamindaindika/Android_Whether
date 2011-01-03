@@ -33,70 +33,48 @@ public class XmlParser {
 			}		
 			
 			while(parse.nextTag() == XmlPullParser.START_TAG) {
-				//parse.require(XmlPullParser.START_TAG, null, "image");
-				//image element	
+				
 				parse.nextTag();			
 				parse.nextText();			
 				parse.nextTag();			
 				parse.nextText();
 				parse.nextTag();			
 				parse.nextText();	
-				//end of image element
-				
+								
 				parse.nextTag();
 				parse.nextTag();
 				
 				parse.require(XmlPullParser.START_TAG, null, "display_location");			
 				parse.nextTag();
 				
-				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
+				ht.put(parse.getName(), parse.nextText());								
+				parse.nextTag();
 				
+				ht.put(parse.getName(), parse.nextText());				
+				parse.nextTag();
+				
+				ht.put(parse.getName(), parse.nextText());				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put(parse.getName(), parse.nextText());
-				
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				
-				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
-				parse.nextTag();
-				
-				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
-				parse.nextTag();
-				
-				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
+				ht.put(parse.getName(), parse.nextText());				
 				//end of display_location
 				
 				parse.nextTag();
@@ -106,141 +84,95 @@ public class XmlParser {
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
 				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
 				parse.nextTag();
 				
-				ht.put("ob"+parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
-				
+				ht.put("ob"+parse.getName(), parse.nextText());				
 				//end of observation_location
 				
 				parse.nextTag();
 							
 				parse.nextTag();
-				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
+				ht.put(parse.getName(), parse.nextText());				
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
-				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				ht.put(parse.getName(), parse.nextText());
 				//System.out.println(parse.getName() + parse.nextText());
 				parse.nextTag();
 				System.out.println(parse.getName() + parse.nextText());
-				//String aaa = ht.get("full");
-				//System.out.println("value of full is " + aaa);
+				
 				parse.nextTag();			
 				parse.nextTag();
 				parse.nextTag();
@@ -255,45 +187,21 @@ public class XmlParser {
 			parse.nextTag();
 			
 			parse.nextText();
-			parse.nextTag();
-			System.out.println(parse.getLineNumber());			
-			//System.out.println(parse.getName() + parse.nextText());
-			//System.out.println(getCity(parse.nextText()));
-			//ht.put("cityname", parse.nextText());^[^\\d].*
-			
+			parse.nextTag();					
+						
 			String address = parse.nextText();
 			validateString(address);
-			/*String arr[];			
 			
-			arr = address.split(",");
-			String country = arr[arr.length-1].trim();			
-			
-			for(String item : arr){
-				//System.out.println(item);
-				if(Pattern.matches("[^\\d].*", item)){
-					if(Pattern.matches("^.*\\D", item)){
-						if(item.indexOf("Rd")<0 && item.indexOf("Mw")<0 && item.trim().indexOf(" ")<0){
-							if(item!=arr[arr.length-1]){
-								//System.out.println(item);
-								ht.put("cityname", item.trim());
-								ht.put("countryName", country);
-							}
-						}						
-					}								
-				}
-			}*/
 		}else if(para==2){				
 			parse.nextTag();
 			parse.nextTag();
 			parse.nextTag();
-			String countryCode = parse.nextText();
-			//System.out.println(parse.getName() + parse.nextText());
+			String countryCode = parse.nextText();		
 			
 			ht.put("countryCode", countryCode);
 		}
 		return ht;
-	}
-	
+	}	
 	
 	public void validateString(String str){		
 		String arr[];			
@@ -301,13 +209,11 @@ public class XmlParser {
 		arr = str.split(",");
 		String country = arr[arr.length-1].trim();			
 		
-		for(String item : arr){
-			//System.out.println(item);
+		for(String item : arr){			
 			if(Pattern.matches("[^\\d].*", item)){
 				if(Pattern.matches("^.*\\D", item)){
 					if(item.indexOf("Rd")<0 && item.indexOf("Mw")<0 && item.trim().indexOf(" ")<0){
-						if(item!=arr[arr.length-1]){
-							//System.out.println(item);
+						if(item!=arr[arr.length-1]){							
 							ht.put("cityname", item.trim());
 							ht.put("countryName", country);
 						}

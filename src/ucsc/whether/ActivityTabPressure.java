@@ -23,12 +23,21 @@ public class ActivityTabPressure extends Activity {
         tvPressurein = (TextView) this.findViewById(R.id.TextView02);        
         tvPressuremb = (TextView) this.findViewById(R.id.TextView04);
         tvPressure = (TextView) this.findViewById(R.id.TextView06);
+          
+        if(ht.get("pressure_mb").length()>0){
+        	tvPressuremb.setText(convertToDouble(ht.get("pressure_mb")).toString()+" mb");
+        }else{
+        	tvPressuremb.setText("N/A");
+        }
+        if(ht.get("pressure_in").length()>0){
+        	tvPressurein.setText(convertToDouble(ht.get("pressure_in")).toString()+" inHg");
+        	Double incm = convertToDouble(ht.get("pressure_in"))*2.54;  
+            tvPressure.setText(convertToDouble(incm.toString()).toString()+ " cmHg");
+        }else{
+        	tvPressurein.setText("N/A");
+        	tvPressure.setText("N/A");
+        }
                 
-        tvPressuremb.setText(convertToDouble(ht.get("pressure_mb")).toString()+" mb");
-        tvPressurein.setText(convertToDouble(ht.get("pressure_in")).toString()+" inHg");
-        
-        Double incm = convertToDouble(ht.get("pressure_in"))*2.54;  
-        tvPressure.setText(convertToDouble(incm.toString()).toString()+ " cmHg");        
         
     }
     

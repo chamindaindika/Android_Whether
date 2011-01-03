@@ -79,8 +79,7 @@ public class ActivityOtherLocation extends Activity {
 				try{	    	        	
 		        	xp = new XmlParser();
 		            hashTable = xp.process(url,1);		            
-				}catch (IOException e){
-			    	//e.printStackTrace();	    	
+				}catch (IOException e){			    	    	
 			    	showDialog(0);
 			    }catch (XmlPullParserException ex){
 			    	ex.printStackTrace();
@@ -106,7 +105,7 @@ public class ActivityOtherLocation extends Activity {
     	}else if(id==2){
     		msg="Invalid city!";
     	}else if(id==3){
-    		msg="Currently, the service is not avilable for this city!";
+    		msg="This may be an invalid city or currently, the service may not be available for this city!";
     	}
     	  		
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
