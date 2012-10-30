@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="ucsc.whether"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".ActivityWhetherHome"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".ActivityWhetherInformation"      
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity
+            android:name=".ActivityTabTemparature"      
+            android:label="@string/app_name">            
+        </activity>
+        
+        <activity
+            android:name=".ActivityTabWind"      
+            android:label="@string/app_name">            
+        </activity>
+        
+        <activity
+            android:name=".ActivityTabPressure"      
+            android:label="@string/app_name">
+        </activity>
+        
+        <activity
+            android:name=".ActivityLocationInformation"      
+            android:label="@string/app_name">
+        </activity>
+        
+        <activity
+            android:name=".ActivityOtherLocation"      
+            android:label="@string/app_name">
+        </activity>
+
+    </application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	
+
+</manifest> 
